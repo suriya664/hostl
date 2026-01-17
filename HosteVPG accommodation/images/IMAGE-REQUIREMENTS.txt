@@ -1,0 +1,60 @@
+HOSTEVPG - IMAGE REQUIREMENTS
+================================
+
+REQUIRED IMAGES (Add these to the images/ folder):
+
+1. hero-bg.jpg
+   - Size: 1920x1080px or larger
+   - Used as: Background for hero sections on all pages
+   - Location: Used in CSS file
+
+2. room-single.jpg
+   - Size: 800x600px or 1200x900px
+   - Used as: Single sharing room photo
+   - Pages: index.html, rooms.html
+
+3. room-double.jpg
+   - Size: 800x600px or 1200x900px
+   - Used as: Double sharing room photo
+   - Pages: index.html, rooms.html
+
+4. room-triple.jpg
+   - Size: 800x600px or 1200x900px
+   - Used as: Triple sharing room photo
+   - Pages: index.html, rooms.html
+
+5. about-us.jpg
+   - Size: 800x600px or 1200x900px
+   - Used as: About page image
+   - Pages: about.html
+
+OPTIONAL IMAGES:
+
+6. logo.png (optional)
+   - Size: 200x60px (or proportional)
+   - Used as: Website logo in navbar
+   - To enable: Uncomment logo img tag in HTML files
+
+7. favicon.ico (optional)
+   - Size: 32x32px or 16x16px
+   - Used as: Browser tab icon
+   - Already linked in all HTML files
+
+================================
+QUICK SETUP:
+1. Download/create images
+2. Optimize images (compress)
+3. Place in images/ folder
+4. Test website
+
+For detailed information, see README.md in this folder.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1779 @@
+/* Luxury PG Accommodation Site - Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --matte-black: #0B0B0B;
+    --champagne-gold: #C9A24D;
+    --off-white: #FAFAFA;
+    --dark-gray: #1a1a1a;
+    --light-gray: #e5e5e5;
+
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --font-size-base: 16px;
+    --h1-size: 3rem;
+    --h2-size: 2.25rem;
+    --h3-size: 1.75rem;
+    --h4-size: 1.5rem;
+    --h5-size: 1.25rem;
+
+    /* Responsive Navbar Breakpoint */
+    --navbar-breakpoint: 992px;
+    /* lg */
+
+    /* Responsive Fixes for Tablet/Desktop transition */
+    @media (max-width: 1024px) {
+
+        /* Ensure nav fits on 1024px screens */
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: 0.5rem !important;
+            padding-left: 0.5rem !important;
+            font-size: 0.95rem;
+        }
+
+        .navbar-brand {
+            font-size: 1.25rem;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .hero-section {
+            min-height: 40vh;
+        }
+
+        .container {
+            max-width: 100%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    /* Dashboard Profile Card Responsive */
+    @media (max-width: 991px) {
+        .sidebar {
+            transform: translateX(-100%);
+            /* Hide sidebar by default on tablet/mobile */
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .main-content {
+            margin-left: 0 !important;
+            /* Remove margin when sidebar is hidden */
+        }
+
+        .profile-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            margin-right: 0 !important;
+            margin-bottom: 1rem;
+        }
+
+        .profile-info {
+            width: 100%;
+        }
+    }
+
+    --h6-size: 1rem;
+
+    /* Colors */
+    --primary-color: #C9A24D;
+    --primary-hover: #b08d40;
+    --text-color: #333333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #1a1a1a;
+    --dark-gray: #333333;
+
+    /* Buttons */
+    --btn-padding: 0.75rem 1.5rem;
+    --btn-radius: 5px;
+    --btn-font-weight: 500;
+
+    /* Images */
+    --card-img-height: 250px;
+}
+
+/* Global Font Enforcement */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+input,
+textarea,
+select,
+label,
+.btn,
+.navbar-brand,
+.nav-link,
+.card-title,
+.footer,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--font-primary) !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--dark-gray);
+    /* Updated color */
+    background-color: var(--off-white);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-regular);
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--font-primary) !important;
+    font-weight: 700;
+    color: var(--matte-black);
+    /* Changed from var(--dark-bg) to var(--matte-black) to match existing theme */
+    margin-bottom: 1rem;
+    text-align: center;
+    /* Kept existing text-align: center */
+}
+
+h1,
+.h1 {
+    font-size: var(--h1-size);
+}
+
+h2,
+.h2 {
+    font-size: var(--h2-size);
+}
+
+h3,
+.h3 {
+    font-size: var(--h3-size);
+}
+
+h4,
+.h4 {
+    font-size: var(--h4-size);
+}
+
+h5,
+.h5 {
+    font-size: var(--h5-size);
+}
+
+h6,
+.h6 {
+    font-size: var(--h6-size);
+}
+
+/* Center all paragraphs */
+p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Center all text elements */
+div,
+section,
+article {
+    text-align: center;
+}
+
+/* Exception for navbar container */
+.navbar .container {
+    text-align: left !important;
+}
+
+/* Exception for form containers */
+form {
+    text-align: center;
+}
+
+form .form-group,
+form .mb-3,
+form .row {
+    text-align: center;
+}
+
+/* Center lists */
+ul,
+ol {
+    text-align: center;
+    list-style-position: inside;
+}
+
+li {
+    text-align: center;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--matte-black) !important;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: left !important;
+}
+
+/* Standardized Brand Text */
+.brand-text {
+    font-size: var(--h4-size);
+    /* was 1.5rem */
+    font-weight: var(--font-weight-bold);
+    color: var(--champagne-gold) !important;
+    letter-spacing: 1px;
+}
+
+.navbar-brand {
+    color: var(--champagne-gold) !important;
+    font-size: var(--h4-size);
+    /* was 1.5rem, which is h4 size */
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    text-align: left !important;
+}
+
+/* ... existing styles ... */
+
+/* Footer */
+.footer {
+    background-color: var(--matte-black);
+    color: var(--off-white);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer h5 {
+    color: var(--champagne-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.footer h5.brand-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.navbar-nav {
+    text-align: left !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--off-white) !important;
+    margin: 0 0.25rem;
+    font-weight: 500;
+    /* Updated to 500 */
+    font-size: 1rem;
+    /* 16px */
+    transition: color 0.3s ease;
+    text-align: left !important;
+    padding: 0.5rem 0.75rem !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--champagne-gold) !important;
+}
+
+/* Navbar Buttons */
+.navbar-nav .btn {
+    margin: 0.25rem 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 0;
+    text-transform: none;
+    letter-spacing: normal;
+    min-width: auto;
+    white-space: nowrap;
+}
+
+.navbar-nav .btn-primary {
+    background-color: var(--champagne-gold);
+    border-color: var(--champagne-gold);
+    color: var(--matte-black);
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #b8943a;
+    border-color: #b8943a;
+    color: var(--matte-black);
+}
+
+.navbar-nav .btn-primary.active {
+    background-color: #b8943a;
+    border-color: #b8943a;
+    color: var(--matte-black);
+}
+
+.navbar-nav .btn-outline-primary.active {
+    background-color: var(--champagne-gold);
+    border-color: var(--champagne-gold);
+    color: var(--matte-black);
+}
+
+.navbar-nav .btn-outline-primary {
+    border-color: var(--champagne-gold);
+    color: var(--champagne-gold);
+    background-color: transparent;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    background-color: var(--champagne-gold);
+    border-color: var(--champagne-gold);
+    color: var(--matte-black);
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: var(--matte-black);
+    border: 1px solid var(--champagne-gold);
+    border-radius: 0;
+    margin-top: 0.5rem;
+}
+
+.navbar-nav .dropdown-item {
+    color: var(--off-white);
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: rgba(201, 162, 77, 0.1);
+    color: var(--champagne-gold);
+}
+
+.navbar-nav .dropdown-item i {
+    color: var(--champagne-gold);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.7)), url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1600&h=900&fit=crop') center/cover;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--off-white);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero-section h1 {
+    font-size: var(--h1-size);
+    /* was 3.5rem */
+    font-weight: 300;
+    /* Keeping lightweight for Hero specific design */
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--light-gray);
+}
+
+/* Buttons */
+/* Button Variables */
+:root {
+    --btn-padding-y: 0.75rem;
+    --btn-padding-x: 2rem;
+    --btn-radius: 4px;
+    --btn-font-weight: 600;
+    --btn-letter-spacing: 1px;
+    --btn-transition: all 0.3s ease;
+}
+
+/* ... existing body styles ... */
+
+/* Buttons Standardized */
+.btn {
+    border-radius: var(--btn-radius);
+    font-weight: var(--btn-font-weight);
+    /* 600 */
+    letter-spacing: var(--btn-letter-spacing);
+    text-transform: uppercase;
+    transition: var(--btn-transition);
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    font-size: 1rem;
+    /* Ensure 16px base size for buttons */
+}
+
+.btn-primary {
+    background-color: var(--champagne-gold);
+    border: 2px solid var(--champagne-gold);
+    /* Ensure border width matches outline for sizing consistency */
+    color: var(--matte-black);
+}
+
+.btn-primary:hover {
+    background-color: #b8943a;
+    border-color: #b8943a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(201, 162, 77, 0.4);
+    color: var(--matte-black);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--champagne-gold);
+    color: var(--champagne-gold);
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--champagne-gold);
+    color: var(--matte-black);
+    border-color: var(--champagne-gold);
+}
+
+/* Section Styles */
+.section {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: var(--h2-size);
+    /* was 2.5rem */
+    font-weight: 300;
+    /* keeping 300 for design specific style */
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--matte-black);
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+/* Feature Cards */
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0;
+    height: 100%;
+    min-height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--light-gray);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Ensure columns stretch to equal height */
+.row.g-4>[class*="col-"],
+.row>[class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.row.g-4>[class*="col-"]>.feature-card,
+.row>[class*="col-"]>.feature-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--champagne-gold);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h4 {
+    color: var(--matte-black);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.feature-card p {
+    text-align: center;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+/* Room Cards */
+.room-card {
+    background-color: white;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--light-gray);
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Ensure all card columns stretch to equal height */
+.row.g-4>[class*="col-"],
+.row>[class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.row.g-4>[class*="col-"]>.room-card,
+.row>[class*="col-"]>.room-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row.g-4>[class*="col-"]>.feature-card,
+.row>[class*="col-"]>.feature-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Standardized Image Class for Lists */
+.room-listing-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--btn-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.room-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: var(--light-gray);
+    display: block;
+    max-width: 100%;
+}
+
+/* Ensure images are responsive on all devices */
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Image fallback for missing images */
+img {
+    background-color: var(--light-gray);
+}
+
+img[src=""],
+img:not([src]) {
+    background: linear-gradient(135deg, var(--matte-black) 0%, var(--dark-gray) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--champagne-gold);
+    font-size: 0.9rem;
+}
+
+img[src=""]::after,
+img:not([src])::after {
+    content: "Image not found";
+}
+
+/* Image loading error fallback */
+img {
+    background-color: var(--light-gray);
+}
+
+/* Exception for testimonial images - no min-height */
+.testimonial-card img {
+    min-height: 0 !important;
+}
+
+img[onerror] {
+    background: linear-gradient(135deg, var(--matte-black) 0%, var(--dark-gray) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.room-card-body {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.room-card h5 {
+    color: var(--matte-black);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.room-price {
+    color: var(--champagne-gold);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Amenities Grid */
+.amenity-item {
+    padding: 1.5rem;
+    background-color: white;
+    border-left: 3px solid var(--champagne-gold);
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.amenity-item:hover {
+    background-color: var(--off-white);
+}
+
+.amenity-item h5 {
+    color: var(--matte-black);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.amenity-item p {
+    text-align: center;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 0;
+    border-left: 4px solid var(--champagne-gold);
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card .text-center {
+    overflow: hidden;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.testimonial-card img {
+    border-radius: 50% !important;
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
+    min-height: 80px !important;
+    max-width: 80px !important;
+    max-height: 80px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 !important;
+    border: 3px solid var(--champagne-gold);
+    padding: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+    flex-shrink: 0;
+    background: none !important;
+    background-image: none !important;
+    background-repeat: no-repeat !important;
+}
+
+.testimonial-rating {
+    color: var(--champagne-gold);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--matte-black);
+    text-align: center;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-color: var(--matte-black);
+    color: var(--off-white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Final CTA Section */
+.final-cta-section {
+    background: linear-gradient(rgba(11, 11, 11, 0.8), rgba(11, 11, 11, 0.8)), url('https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1600&h=600&fit=crop') center/cover no-repeat fixed;
+    color: var(--off-white);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed;
+    /* Parallax effect */
+}
+
+.final-cta-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--off-white);
+}
+
+.final-cta-section p.lead {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: var(--light-gray);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.final-cta-section .btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.5rem;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--matte-black);
+    color: var(--off-white);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer h5 {
+    color: var(--champagne-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.footer ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
+.footer li {
+    text-align: center;
+}
+
+.footer a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--champagne-gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #999;
+}
+
+/* Form Styles */
+.form-control {
+    border-radius: 0;
+    border: 1px solid var(--light-gray);
+    padding: 0.8rem;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.form-control:focus {
+    border-color: var(--champagne-gold);
+    box-shadow: 0 0 0 0.2rem rgba(201, 162, 77, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--matte-black);
+    margin-bottom: 0.5rem;
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-row {
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    text-align: left;
+}
+
+/* Pricing Table */
+.pricing-table {
+    background-color: white;
+    padding: 2.5rem;
+    border: 2px solid var(--light-gray);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    height: 100%;
+    min-height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.row.g-4>[class*="col-"]>.pricing-table {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-table:hover {
+    border-color: var(--champagne-gold);
+    transform: translateY(-5px);
+}
+
+.pricing-table h3 {
+    color: var(--matte-black);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.pricing-table .pricing-amount {
+    text-align: center;
+}
+
+.pricing-table p {
+    text-align: center;
+}
+
+.pricing-table ul {
+    text-align: center;
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.pricing-table li {
+    text-align: center;
+}
+
+.pricing-amount {
+    font-size: 2.5rem;
+    color: var(--champagne-gold);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.pricing-features li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+}
+
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-features li i {
+    display: inline-block;
+}
+
+/* Location Map */
+.location-map {
+    width: 100%;
+    height: 400px;
+    border: 2px solid var(--light-gray);
+}
+
+/* Contact Info Cards - Modal Style */
+.contact-card {
+    background-color: white;
+    padding: 2.5rem;
+    text-align: center;
+    border: 2px solid var(--light-gray);
+    border-radius: 8px;
+    height: 100%;
+    min-height: 100%;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--champagne-gold), #b8943a);
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--champagne-gold);
+}
+
+.row.g-4>[class*="col-"]>.contact-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card .contact-icon {
+    font-size: 3.5rem;
+    color: var(--champagne-gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(201, 162, 77, 0.1), rgba(201, 162, 77, 0.05));
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.contact-card h4 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--matte-black);
+}
+
+.contact-card p {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact-card p.text-muted {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.contact-card .btn {
+    margin-top: auto;
+    width: 100%;
+    max-width: 220px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.contact-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 162, 77, 0.3);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--champagne-gold);
+    margin-bottom: 1rem;
+}
+
+/* Rules & Policies */
+.policy-section {
+    background-color: white;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--champagne-gold);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.policy-section h4 {
+    color: var(--matte-black);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.policy-section ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+    display: inline-block;
+}
+
+.policy-section ul li {
+    padding: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.policy-section ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--champagne-gold);
+    font-weight: bold;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20BA5A;
+    color: white;
+}
+
+/* Utility Classes */
+.bg-dark-custom {
+    background-color: var(--matte-black) !important;
+}
+
+.text-gold {
+    color: var(--champagne-gold) !important;
+}
+
+.bg-gold {
+    background-color: var(--champagne-gold) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    /* Navbar buttons on mobile */
+    .navbar-nav .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+        text-align: center;
+        display: block;
+    }
+
+    .navbar-nav .dropdown-menu {
+        width: 100%;
+        position: static !important;
+        transform: none !important;
+        margin-top: 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .section {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .section-subtitle {
+        text-align: center;
+    }
+
+    /* Center all containers on mobile */
+    .container {
+        text-align: center;
+    }
+
+    .row {
+        justify-content: center;
+        text-align: center;
+    }
+
+    [class*="col-"] {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Center all text elements */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-align: center !important;
+    }
+
+    p {
+        text-align: center !important;
+    }
+
+    ul,
+    ol {
+        text-align: center;
+        list-style-position: inside;
+    }
+
+    li {
+        text-align: center;
+    }
+
+    /* Mobile Button Spacing */
+    .hero-buttons,
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .hero-buttons .btn,
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        min-width: 280px;
+        margin: 0 !important;
+        display: block;
+        padding: 0.8rem 2.5rem;
+        text-align: center;
+    }
+
+    .cta-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cta-banner h2,
+    .cta-banner p {
+        text-align: center;
+    }
+
+    /* CTA Banner Button Spacing */
+    .cta-banner .btn {
+        margin-bottom: 1rem;
+        margin-right: 0 !important;
+    }
+
+    .cta-banner .btn:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Button containers in sections */
+    .mt-4 .btn,
+    .section .btn {
+        margin-bottom: 1rem;
+        width: 100%;
+        max-width: 280px;
+        min-width: 280px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mt-4 .btn:last-child,
+    .section .btn:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Center cards */
+    .feature-card,
+    .room-card,
+    .contact-card,
+    .pricing-table,
+    .amenity-item,
+    .testimonial-card {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Center images */
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Ensure room card images are responsive on mobile */
+    .room-card img {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 200px;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    /* Ensure all images have proper fallback */
+    img[src=""],
+    img:not([src]),
+    img[src*="unsplash"] {
+        background-color: var(--light-gray);
+        background-image: linear-gradient(135deg, #e5e5e5 0%, #d0d0d0 100%);
+    }
+
+    /* Forms on mobile */
+    form {
+        text-align: left;
+    }
+
+    .form-label {
+        text-align: left !important;
+    }
+
+    /* Center submit button only */
+    form .btn[type="submit"],
+    form button[type="submit"] {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    /* Reorder sections on mobile - Contact Form above Contact Information */
+    /* Use CSS to reorder only on contact page */
+    body.contact-page,
+    body:has(.contact-form-section) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Set order for sections on contact page */
+    .contact-page .hero-section,
+    body:has(.contact-form-section) .hero-section {
+        order: 0;
+    }
+
+    .contact-page .contact-form-section,
+    body:has(.contact-form-section) .contact-form-section {
+        order: 1;
+    }
+
+    .contact-page .contact-info-section,
+    body:has(.contact-form-section) .contact-info-section {
+        order: 2;
+    }
+
+    /* Other sections maintain natural order */
+    .contact-page .section:not(.contact-form-section):not(.contact-info-section):not(.hero-section),
+    body:has(.contact-form-section) .section:not(.contact-form-section):not(.contact-info-section):not(.hero-section) {
+        order: 3;
+    }
+
+    .contact-page .footer,
+    body:has(.contact-form-section) .footer {
+        order: 999;
+    }
+
+    /* Mobile: Keep list items with icons in straight line - prevent awkward wrapping */
+    .amenity-item ul.list-unstyled li,
+    .room-card-body ul.list-unstyled li,
+    .pricing-features li,
+    .list-unstyled li {
+        display: flex !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        padding: 0.5rem 0 !important;
+        line-height: 1.6 !important;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        white-space: normal !important;
+        width: 100% !important;
+    }
+
+    .amenity-item ul.list-unstyled li i,
+    .room-card-body ul.list-unstyled li i,
+    .pricing-features li i,
+    .list-unstyled li i {
+        flex-shrink: 0 !important;
+        margin-right: 0.5rem !important;
+        margin-top: 0.1rem !important;
+        display: inline-block !important;
+        min-width: 20px !important;
+        width: auto !important;
+    }
+
+    /* Ensure text content wraps properly while icon stays fixed */
+    .amenity-item ul.list-unstyled li>*:not(i),
+    .room-card-body ul.list-unstyled li>*:not(i),
+    .pricing-features li>*:not(i),
+    .list-unstyled li>*:not(i) {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    /* Ensure proper alignment for headings with icons */
+    .amenity-item h4,
+    .amenity-item h5 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    .amenity-item h4 i,
+    .amenity-item h5 i {
+        flex-shrink: 0 !important;
+        margin-right: 0.5rem !important;
+        min-width: 20px !important;
+        width: auto !important;
+        display: inline-block !important;
+    }
+
+    /* Ensure text in headings stays aligned with icon */
+    .amenity-item h4,
+    .amenity-item h5 {
+        white-space: normal !important;
+    }
+
+    /* Prevent awkward line breaks in list items - allow text to wrap naturally */
+    .amenity-item ul.list-unstyled li,
+    .room-card-body ul.list-unstyled li,
+    .pricing-features li,
+    .list-unstyled li {
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Ensure list items align properly - room card body stays left-aligned */
+    .room-card-body ul.list-unstyled {
+        text-align: left !important;
+        padding-left: 0 !important;
+        width: 100%;
+        display: block !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    /* Remove left borders on mobile for cleaner look */
+    .testimonial-card,
+    .policy-section {
+        border-left: none !important;
+    }
+
+    /* Rooms page: Keep list items aligned */
+    .room-card-body ul.list-unstyled {
+        text-align: left !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        width: 100%;
+        display: block !important;
+    }
+
+    .room-card-body h5.mt-4 {
+        text-align: center;
+    }
+
+    .room-card-body ul.list-unstyled li {
+        display: flex !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+    }
+
+    /* Ensure text content in room card lists wraps properly */
+    .room-card-body ul.list-unstyled li>*:not(i) {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    /* Pricing page: Ensure list items with text-start stay aligned */
+    .pricing-features.text-start li,
+    .pricing-features li {
+        display: flex !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+    }
+
+    .pricing-features.text-start li i,
+    .pricing-features li i {
+        flex-shrink: 0 !important;
+        margin-right: 0.5rem !important;
+        margin-top: 0.1rem !important;
+        min-width: 20px !important;
+        width: auto !important;
+    }
+
+    .pricing-features {
+        text-align: left !important;
+        padding-left: 0 !important;
+        width: 100%;
+        display: block !important;
+    }
+
+    /* Ensure text content in pricing features wraps properly */
+    .pricing-features li>*:not(i) {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    /* Location page: Nearby places list items */
+    .amenity-item .list-unstyled li {
+        display: flex !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+    }
+
+    .amenity-item .list-unstyled li strong {
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .amenity-item .list-unstyled li i {
+        flex-shrink: 0 !important;
+        margin-right: 0.5rem !important;
+        margin-top: 0.1rem !important;
+        min-width: 20px !important;
+        width: auto !important;
+    }
+
+    /* Ensure text after strong tag wraps properly */
+    .amenity-item .list-unstyled li>*:not(i):not(strong) {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    /* Location page: Address and Landmarks section */
+    .amenity-item h5 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .amenity-item h5 i {
+        flex-shrink: 0 !important;
+        margin-right: 0.5rem !important;
+    }
+
+    /* Override: Center everything in amenity items on mobile for amenities page */
+    .amenity-item {
+        text-align: center !important;
+        border-left: none !important;
+    }
+
+    .amenity-item h4,
+    .amenity-item h5 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+    }
+
+    .amenity-item h4 i,
+    .amenity-item h5 i {
+        flex-shrink: 0 !important;
+        margin-right: 0.5rem !important;
+        min-width: 20px !important;
+        width: auto !important;
+    }
+
+    .amenity-item p {
+        text-align: center !important;
+    }
+
+    .amenity-item ul.list-unstyled {
+        text-align: center !important;
+    }
+
+    .amenity-item ul.list-unstyled li {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .amenity-item ul.list-unstyled li i {
+        flex-shrink: 0 !important;
+        margin-right: 0.5rem !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* Desktop Button Spacing */
+@media (min-width: 768px) {
+
+    .hero-buttons,
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-buttons .btn,
+    .cta-buttons .btn {
+        width: auto;
+        min-width: 200px;
+        max-width: none;
+        margin: 0 !important;
+    }
+
+    /* CTA Banner Button Spacing on Desktop */
+    .cta-banner .btn {
+        margin-bottom: 0;
+        margin-right: 1rem !important;
+    }
+
+    .cta-banner .btn:last-child {
+        margin-right: 0 !important;
+    }
+}
+
+/* Loading Spinner */
+.spinner-border {
+    color: var(--champagne-gold);
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 0;
+    border: none;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Location Section */
+.location-section .row {
+    text-align: left;
+    /* Override default text-align: center for this section */
+}
+
+.location-section .text-center {
+    text-align: center !important;
+}
+
+.location-benefits li {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+/* Standardized Image Class */
+.img-standard {
+    width: 100%;
+    height: 250px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    /* Ensures image covers area without distortion */
+    border-radius: var(--btn-radius);
+}
+
+/* Ensure existing cards use this if they don't have the class yet */
+.room-card img,
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (min-width: 992px) {
+    .location-benefits li {
+        justify-content: flex-start;
+    }
+}
+
+.location-benefits i {
+    font-size: 1.25rem;
+    color: var(--champagne-gold);
+}
+
+.location-visual {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.location-visual img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    display: block;
+}
+
+.location-visual:hover img {
+    transform: scale(1.05);
+    /* Subtle zoom effect */
+}
+
+.location-overlay {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.location-visual:hover .location-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
